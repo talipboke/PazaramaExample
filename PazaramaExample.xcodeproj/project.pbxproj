@@ -19,6 +19,7 @@
 		CB522F842A47893B009EA192 /* DatabaseEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB522F832A47893B009EA192 /* DatabaseEntity.swift */; };
 		CB522F862A478954009EA192 /* DatabaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB522F852A478954009EA192 /* DatabaseProtocol.swift */; };
 		CB6303D52A478C9300CDC30A /* BaseFoundation in Frameworks */ = {isa = PBXBuildFile; productRef = CB6303D42A478C9300CDC30A /* BaseFoundation */; };
+		CB8C80992A478FA300D754EC /* CommonComponents in Frameworks */ = {isa = PBXBuildFile; productRef = CB8C80982A478FA300D754EC /* CommonComponents */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		CB522F832A47893B009EA192 /* DatabaseEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseEntity.swift; sourceTree = "<group>"; };
 		CB522F852A478954009EA192 /* DatabaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseProtocol.swift; sourceTree = "<group>"; };
 		CB522F882A478BE7009EA192 /* BaseFoundation */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = BaseFoundation; path = Packages/BaseFoundation; sourceTree = "<group>"; };
+		CB6303D62A478EA500CDC30A /* CommonComponents */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = CommonComponents; path = Packages/CommonComponents; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +46,7 @@
 			files = (
 				CB6303D52A478C9300CDC30A /* BaseFoundation in Frameworks */,
 				CB522F792A46E229009EA192 /* FirebaseFirestoreSwift in Frameworks */,
+				CB8C80992A478FA300D754EC /* CommonComponents in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				CB522F882A478BE7009EA192 /* BaseFoundation */,
+				CB6303D62A478EA500CDC30A /* CommonComponents */,
 			);
 			name = Packages;
 			sourceTree = "<group>";
@@ -168,6 +172,7 @@
 			packageProductDependencies = (
 				CB522F782A46E229009EA192 /* FirebaseFirestoreSwift */,
 				CB6303D42A478C9300CDC30A /* BaseFoundation */,
+				CB8C80982A478FA300D754EC /* CommonComponents */,
 			);
 			productName = PazaramaExample;
 			productReference = CB522F572A46D5D0009EA192 /* PazaramaExample.app */;
@@ -462,6 +467,10 @@
 		CB6303D42A478C9300CDC30A /* BaseFoundation */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = BaseFoundation;
+		};
+		CB8C80982A478FA300D754EC /* CommonComponents */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = CommonComponents;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
