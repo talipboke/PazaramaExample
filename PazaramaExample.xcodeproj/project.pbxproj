@@ -13,6 +13,11 @@
 		CB522F672A46D5D2009EA192 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB522F652A46D5D2009EA192 /* LaunchScreen.storyboard */; };
 		CB522F732A46DC0D009EA192 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CB522F722A46DC0D009EA192 /* GoogleService-Info.plist */; };
 		CB522F792A46E229009EA192 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CB522F782A46E229009EA192 /* FirebaseFirestoreSwift */; };
+		CB522F7C2A46ED52009EA192 /* FirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB522F7B2A46ED51009EA192 /* FirestoreService.swift */; };
+		CB522F802A46ED6A009EA192 /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB522F7F2A46ED6A009EA192 /* ProductModel.swift */; };
+		CB522F822A478928009EA192 /* DatabaseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB522F812A478928009EA192 /* DatabaseError.swift */; };
+		CB522F842A47893B009EA192 /* DatabaseEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB522F832A47893B009EA192 /* DatabaseEntity.swift */; };
+		CB522F862A478954009EA192 /* DatabaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB522F852A478954009EA192 /* DatabaseProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +28,11 @@
 		CB522F662A46D5D2009EA192 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CB522F682A46D5D2009EA192 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CB522F722A46DC0D009EA192 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CB522F7B2A46ED51009EA192 /* FirestoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreService.swift; sourceTree = "<group>"; };
+		CB522F7F2A46ED6A009EA192 /* ProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductModel.swift; sourceTree = "<group>"; };
+		CB522F812A478928009EA192 /* DatabaseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseError.swift; sourceTree = "<group>"; };
+		CB522F832A47893B009EA192 /* DatabaseEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseEntity.swift; sourceTree = "<group>"; };
+		CB522F852A478954009EA192 /* DatabaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +66,8 @@
 		CB522F592A46D5D0009EA192 /* PazaramaExample */ = {
 			isa = PBXGroup;
 			children = (
+				CB522F7E2A46ED5D009EA192 /* Model */,
+				CB522F7A2A46ED02009EA192 /* Database */,
 				CB522F6E2A46D6F4009EA192 /* App */,
 				CB522F702A46D701009EA192 /* Scene */,
 				CB522F6F2A46D6FA009EA192 /* Resource */,
@@ -96,6 +108,25 @@
 				CB522F5E2A46D5D0009EA192 /* HomeController.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		CB522F7A2A46ED02009EA192 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				CB522F7B2A46ED51009EA192 /* FirestoreService.swift */,
+				CB522F812A478928009EA192 /* DatabaseError.swift */,
+				CB522F832A47893B009EA192 /* DatabaseEntity.swift */,
+				CB522F852A478954009EA192 /* DatabaseProtocol.swift */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		CB522F7E2A46ED5D009EA192 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CB522F7F2A46ED6A009EA192 /* ProductModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -175,8 +206,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB522F7C2A46ED52009EA192 /* FirestoreService.swift in Sources */,
+				CB522F842A47893B009EA192 /* DatabaseEntity.swift in Sources */,
 				CB522F5F2A46D5D0009EA192 /* HomeController.swift in Sources */,
 				CB522F5B2A46D5D0009EA192 /* AppDelegate.swift in Sources */,
+				CB522F802A46ED6A009EA192 /* ProductModel.swift in Sources */,
+				CB522F822A478928009EA192 /* DatabaseError.swift in Sources */,
+				CB522F862A478954009EA192 /* DatabaseProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
