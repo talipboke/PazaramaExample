@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>1026517241930-nsga0kt3o9auhqh9d5apv723hf8559uc.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.1026517241930-nsga0kt3o9auhqh9d5apv723hf8559uc</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAXmx_LdyEpni_3S5JO15JvqRnVpnVnCUU</string>
+	<key>GCM_SENDER_ID</key>
+	<string>1026517241930</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.PazaramaExample</string>
+	<key>PROJECT_ID</key>
+	<string>pazaramacase-64cb6</string>
+	<key>STORAGE_BUCKET</key>
+	<string>pazaramacase-64cb6.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:1026517241930:ios:bb1d33a26e2264d22356b3</string>
+</dict>
+</plist>
