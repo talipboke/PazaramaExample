@@ -13,7 +13,7 @@ final public class SearchViewController: UISearchController {
     private let minCountToSearch: Int
     private var throttler: Throttable
     /// Notifies with searchBarText when updates search results
-    public var didUpdateText: ((String?) -> Void)?
+    public var didUpdateText: ((String) -> Void)?
     /// Notifies when user clicks cancel, delete or when searchBarText less than the minCountToSearch
     public var didClear: (() -> Void)?
 
@@ -71,7 +71,7 @@ extension SearchViewController: UISearchResultsUpdating {
                 let searchText = searchController.searchBar.text
                 if searchText != self?.lastSearchedText {
                     self?.lastSearchedText = searchText
-                    self?.didUpdateText?(searchController.searchBar.text)
+                    self?.didUpdateText?(searchController.searchBar.text ?? "")
                 }
             }
         } else {

@@ -23,7 +23,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 // MARK: - Private Methods
 private extension AppDelegate {
     func startApp() {
-        let controller = HomeController()
+        let repository = ProductRepository(database: FirestoreService())
+        let viewModel = HomeViewModel(repository: repository)
+        let controller = HomeController(viewModel: viewModel)
         let navigationController = UINavigationController(rootViewController: controller)
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = navigationController
