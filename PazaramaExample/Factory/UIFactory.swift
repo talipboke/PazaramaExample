@@ -27,9 +27,9 @@ final class UIFactory {
         return collectionView
     }
     
-    static func makeImageView() -> UIImageView {
+    static func makeImageView(contentMode: UIView.ContentMode = .scaleToFill) -> UIImageView {
         let image = UIImageView()
-        image.contentMode = .scaleToFill
+        image.contentMode = contentMode
         image.translatesAutoresizingMaskIntoConstraints = false
         image.layer.masksToBounds = true
         return image
@@ -47,6 +47,7 @@ final class UIFactory {
         let label = UILabel()
         label.textAlignment = .left
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont.systemFont(ofSize: 16, weight: .bold)
         return label
     }
     
@@ -55,6 +56,7 @@ final class UIFactory {
         button.backgroundColor = .magenta
         button.setTitle(AppConst.addToCard.text(), for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.layer.cornerRadius = 6
         return button
     }
     
@@ -70,5 +72,22 @@ final class UIFactory {
         } else {
             return UIView()
         }
+    }
+    
+    static func makeSeperatorView() -> UIView {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.heightAnchor.constraint(equalToConstant: 1).isActive = true
+        view.backgroundColor = UIColor.seperatorGray
+        return view
+    }
+    
+    static func makeInnerTitleLabel(text: String = "", alignment: NSTextAlignment = .left) -> UILabel {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 13, weight: .bold)
+        label.text = text
+        label.textAlignment = alignment
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
     }
 }

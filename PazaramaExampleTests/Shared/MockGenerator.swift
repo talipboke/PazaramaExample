@@ -5,10 +5,16 @@
 //  Created by Talip on 26.06.2023.
 //
 
-import Foundation
+import UIKit
 @testable import PazaramaExample
 
 final class MockGenerator {
+    static func createRouteWindowAndMakeVisible(_ navigationController: UINavigationController) {
+        let window = UIWindow(frame: .zero)
+        window.rootViewController = navigationController
+        window.makeKeyAndVisible()
+    }
+    
     static func createProduct() -> ProductModel {
         return ProductModel.init(id: nil,
                                  name: "New Regular Fit Bisiklet Yaka Basic Kısa Kollu %100 Pamuk Tişört X1266AZ22SMOG532",

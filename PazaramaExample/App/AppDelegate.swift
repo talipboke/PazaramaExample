@@ -10,12 +10,17 @@ import Firebase
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
     var window: UIWindow?
+    private var coordinator: AppCoordinator?
+    private lazy var dependencies: AppDependencies = {
+       return AppDependencies()
+    }()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
-        startApp()
+        if !dependencies.appConfig.isRunningTests {
+            startApp()
+        }
         return true
     }
 }
@@ -23,12 +28,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 // MARK: - Private Methods
 private extension AppDelegate {
     func startApp() {
-        let repository = ProductRepository(database: FirestoreService())
-        let viewModel = HomeViewModel(repository: repository)
-        let controller = HomeController(viewModel: viewModel)
-        let navigationController = UINavigationController(rootViewController: controller)
+        let navigationController = UINavigationController()
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
+        coordinator = dependencies.makeAppCoordinator(navigationController)
+        coordinator?.start()
     }
 }

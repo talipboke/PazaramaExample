@@ -9,6 +9,10 @@ import UIKit
 import BaseFoundation
 import CommonComponents
 
+protocol HomeControllerDelegate: AnyObject {
+    func didSelect(product: ProductModel, index: Int)
+}
+
 final class HomeController: UIViewController {
     private(set) lazy var homeView = HomeView()
     private(set) lazy var listController = UIFactory.makeCollectionViewController(dataSource: dataSource, delegate: self)
@@ -16,6 +20,7 @@ final class HomeController: UIViewController {
     
     private let dataSource: ProductListDataSource
     private var viewModel: HomeViewModelProtocol
+    weak var delegate: HomeControllerDelegate?
     
     init(dataSource: ProductListDataSource = .init(productList: []),
          viewModel: HomeViewModelProtocol) {
@@ -69,7 +74,7 @@ private extension HomeController {
         let controller = SearchViewController(minCountToSearch: viewModel.minCountToSearch,
                                               placeHolderText: AppConst.searchBarPlaceHolderText.text())
         controller.didUpdateText = { [weak self] searchedText in
-            self?.viewModel.search(with: searchedText ?? "")
+            self?.viewModel.search(with: searchedText)
         }
 
         controller.didClear = { [weak self] in
@@ -100,5 +105,11 @@ extension HomeController: UICollectionViewDelegateFlowLayout {
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         return UIDimension.calculateSearchItemSize(collectionView: collectionView)
+    }
+}
+
+extension HomeController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        delegate?.didSelect(product: dataSource.productList[indexPath.row], index: indexPath.row)
     }
 }
